@@ -1,3 +1,6 @@
+Aqui está o seu texto formatado corretamente para um README do GitHub em Markdown:
+
+
 # API de Pedidos
 
 Esta API permite o gerenciamento de pedidos de clientes. Desenvolvida com **Spring Boot**, a API oferece operações de CRUD (Criar, Ler, Atualizar, Deletar) para gerenciar os pedidos em um banco de dados.
@@ -13,19 +16,23 @@ A seguir estão os endpoints disponíveis para interagir com a API de pedidos:
 - **Descrição:** Cria um novo pedido com o nome do cliente e o valor total.
   
 **Exemplo de requisição:**
-json
+```json
 {
   "clienteNome": "João Silva",
   "valorTotal": 150.50
 }
+```
+
 **Exemplo de resposta:**
-json
+```json
 {
   "id": 1,
   "clienteNome": "João Silva",
   "dataPedido": "2025-03-24",
   "valorTotal": 150.50
 }
+```
+
 ### 2. Buscar todos os pedidos
 
 - **Método:** `GET`
@@ -33,7 +40,7 @@ json
 - **Descrição:** Retorna todos os pedidos registrados.
 
 **Exemplo de resposta:**
-json
+```json
 [
   {
     "id": 1,
@@ -48,6 +55,8 @@ json
     "valorTotal": 200.00
   }
 ]
+```
+
 ### 3. Buscar um pedido pelo ID
 
 - **Método:** `GET`
@@ -58,87 +67,62 @@ json
 `GET /pedidos/1`
 
 **Exemplo de resposta:**
-json
+```json
 {
   "id": 1,
   "clienteNome": "João Silva",
   "dataPedido": "2025-03-24",
   "valorTotal": 150.50
 }
+```
+
 ### 4. Atualizar um pedido
 
 - **Método:** `PUT`
 - **Endpoint:** `/pedidos/{id}`
 - **Descrição:** Atualiza um pedido existente, permitindo modificar o nome do cliente e o valor total do pedido.
-
-**Exemplo de requisição:**
-json
-{
-  "clienteNome": "João Silva Atualizado",
-  "valorTotal": 200.75
-}
-**Exemplo de resposta:**
-json
-{
-  "id": 1,
-  "clienteNome": "João Silva Atualizado",
-  "dataPedido": "2025-03-24",
-  "valorTotal": 200.75
-}
-### 5. Deletar um pedido
-
-- **Método:** `DELETE`
-- **Endpoint:** `/pedidos/{id}`
-- **Descrição:** Exclui um pedido do banco de dados com base no ID fornecido.
-
-**Exemplo de requisição:**
-`DELETE /pedidos/1`
-
-**Exemplo de resposta:**
-- **Status:** `204 No Content` (Não há conteúdo retornado na resposta)
-
+  
 ---
 
-## Como rodar o projeto
+## Prints dos Testes
+**(Somente o exemplo 1 tem o print de ambos os ambientes, pois é um exemplo onde os dados mudaram. Se mudar no Postman, irá mudar no Banco de Dados e na API)**
 
-### Pré-requisitos
+### 1. Criando um Novo Pedido
+- Postman
 
-- JDK 17 ou superior
-- Maven
+![Postman](https://github.com/user-attachments/assets/0f9650a3-9cd7-4c0d-9c0a-a704fb21d6c7)
 
-### Passos para rodar a aplicação
+- Banco de dados H2
 
-1. Clone o repositório:
-   
-bash
-   git clone https://github.com/viniciusborgess/fiap-checkpoint1.git
-   
-2. Acesse o diretório do projeto:
-   
-bash
-   cd fiap-checkpoint1
-   
-3. Compile e execute o projeto utilizando Maven:
-   
-bash
-   mvn spring-boot:run
-   
-4. A API estará rodando em `http://localhost:8080/produtos`.
+![image](https://github.com/user-attachments/assets/5830d4bb-c61a-4119-857b-6ffc64837a5c)
 
-5. O Banco de Dados H2 estará rodando em `http://localhost:8080/h2-console`.
----
+- Postman 
 
-## Testes
+![API](https://github.com/user-attachments/assets/da179637-0f82-4f35-880e-41019daaf2b4)
 
-Você pode testar os endpoints da API utilizando o [Postman](https://www.postman.com/) ou outra ferramenta semelhante. Utilize os exemplos de requisição e resposta descritos acima para testar as funcionalidades de criar, buscar, atualizar e excluir pedidos.
 
----
+### 2. Buscar Todos os Pedidos
+- Postman 
 
-## Tecnologias Utilizadas
+![image](https://github.com/user-attachments/assets/f07e3cfc-d97a-49e8-aa49-48c09b9ace91)
 
-- **Spring Boot**: Framework para desenvolvimento de aplicações Java.
-- **Spring Data JPA**: Para integração com bancos de dados relacionais.
-- **H2 Database**: Banco de dados em memória para persistência de dados durante os testes.
-- **Maven**: Gerenciador de dependências e construção do projeto.
 
----
+### 3. Buscar um Pedido pelo ID
+- Postman 
+
+![Postman](https://github.com/user-attachments/assets/be71d685-3bcd-489f-a1d3-786d800613b7)
+
+
+### 4. Atualizar um Pedido
+- Postman 
+
+![Postman](https://github.com/user-attachments/assets/63ae95f7-d0b4-45da-9dae-da952c497c73)
+
+
+### 5. Deletar um Pedido
+- Postman 
+
+![Postman](https://github.com/user-attachments/assets/c0f20f09-349b-4263-bacb-ce6297312361)
+![image](https://github.com/user-attachments/assets/7affa843-d06f-496f-8057-65d90d08df54)
+
+
